@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# Promto: Prompt Library Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Promto is a cross-browser extension for Chrome and Firefox designed to help you manage and organize your prompt library efficiently.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Development](#development)
+  - [Build](#build)
+- [Technical Documentation](#technical-documentation)
+  - [Architecture](#architecture)
+  - [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Introduction
 
-## Expanding the ESLint configuration
+Promto is built to streamline the way users interact with AI models by providing a centralized, easily accessible library for prompts. Whether you are using ChatGPT, Claude, or any other AI interface, Promto ensures your best prompts are always just a click away.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Cross-Browser Support**: Fully compatible with Google Chrome and Mozilla Firefox.
+- **Prompt Management**: Create, edit, and organize your prompts into categories.
+- **Quick Access**: Access your library directly from the browser's extension popup.
+- **Modern UI**: Built with React and TypeScript for a fast, responsive experience.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) (v9 or higher)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/bididi-badidi/promto.git
+   cd promto
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+To start the development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To build the project for production:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The build output will be in the `dist` directory, ready to be loaded as an extension in your browser.
+
+## Technical Documentation
+
+### Architecture
+
+Promto follows a modern frontend architecture:
+
+- **UI Layer**: React with TypeScript for type-safe component development.
+- **Build System**: Vite for rapid development and optimized production builds.
+- **Extension Manifest**: Configured to support both Manifest V3 (Chrome) and standard extension APIs for Firefox.
+
+### Technologies
+
+- **React 19**: Frontend UI library.
+- **TypeScript**: For static typing and enhanced developer experience.
+- **Vite**: Next-generation frontend tooling.
+- **Tailwind CSS 4**: Styling tool.
+- **ESLint**: Linting and code quality.
+
+## Contributing
+
+Contributions are welcomed! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b fea/your-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin fea/your-feature`).
+6. Open a Pull Request.
+
+Please ensure your code adheres to the project's coding style (2-space indentation, JSDoc comments for all new functions/classes).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
