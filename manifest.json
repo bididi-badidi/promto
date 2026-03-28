@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Promto",
+  "version": "1.0.0",
+  "description": "Cross-browser extension for managing your prompt library with ease.",
+  "permissions": ["storage", "contextMenus", "clipboardWrite"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "public/favicon.svg",
+      "32": "public/favicon.svg",
+      "48": "public/favicon.svg",
+      "128": "public/favicon.svg"
+    }
+  },
+  "icons": {
+    "16": "public/favicon.svg",
+    "32": "public/favicon.svg",
+    "48": "public/favicon.svg",
+    "128": "public/favicon.svg"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "promto@zshenchan.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
